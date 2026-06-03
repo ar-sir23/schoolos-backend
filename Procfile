@@ -1,0 +1,2 @@
+web: gunicorn lgsedu.wsgi:application --bind 0.0.0.0:$PORT --workers 2
+release: python manage.py migrate_schemas --shared && python manage.py migrate_schemas && python manage.py collectstatic --noinput
