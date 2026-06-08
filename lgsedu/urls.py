@@ -14,3 +14,6 @@ urlpatterns = [
     path('api/ai/chat/', ChatbotView.as_view()),
     path('', include('core.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from api.student_views import StudentListView
+urlpatterns += [path('api/students/', StudentListView.as_view())]
