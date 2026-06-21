@@ -17,3 +17,9 @@ urlpatterns = [
 
 from api.student_views import StudentListView
 urlpatterns += [path('api/students/', StudentListView.as_view())]
+
+from api.signup_views import SchoolSignupView, PricingPlansView
+urlpatterns += [
+    path('api/signup/', SchoolSignupView.as_view()),
+    path('api/pricing/', PricingPlansView.as_view()),
+]
